@@ -7,10 +7,7 @@ namespace TechJobs.ViewModels
 {
     public class SearchJobsViewModel : BaseViewModel
     {
-        // TODO #7.1 - Extract members common to JobFieldsViewModel
-        // to BaseViewModel
-
-        // The search results
+        
         public List<Job> Jobs { get; set; }
 
         // The column to search, defaults to all

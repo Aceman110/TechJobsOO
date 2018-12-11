@@ -15,7 +15,7 @@ namespace TechJobs.ViewModels
 
         public BaseViewModel()
         {
-            // Populate the list of all columns
+           
 
             Columns = new List<JobFieldType>();
 

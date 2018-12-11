@@ -7,9 +7,7 @@ namespace TechJobs.Data
 {
     class JobData
     {
-        /**
-         * A data store for Job objects
-         */
+    
 
         public List<Job> Jobs { get; set; } = new List<Job>();
         public JobFieldData<Employer> Employers { get; set; } = new JobFieldData<Employer>();
@@ -35,10 +33,7 @@ namespace TechJobs.Data
         }
 
 
-        /**
-         * Return all Job objects in the data store
-         * with a field containing the given term
-         */
+
         public List<Job> FindByValue(string value)
         {
             var results = from j in Jobs
@@ -53,10 +48,7 @@ namespace TechJobs.Data
         }
 
 
-        /**
-         * Returns results of search the jobs data by key/value, using
-         * inclusion of the search term.
-         */
+   
         public List<Job> FindByColumnAndValue(JobFieldType column, string value)
         {
             var results = from j in Jobs
@@ -66,11 +58,7 @@ namespace TechJobs.Data
             return results.ToList();
         }
 
-        /**
-         * Returns the JobField of the given type from the Job object,
-         * for all types other than JobFieldType.All. In this case, 
-         * null is returned.
-         */
+
         public static JobField GetFieldByType(Job job, JobFieldType type)
         {
             switch (type)
@@ -89,10 +77,7 @@ namespace TechJobs.Data
         }
 
 
-        /**
-         * Returns the Job with the given ID,
-         * if it exists in the store
-         */
+      
         public Job Find(int id)
         {
             var results = from j in Jobs

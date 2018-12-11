@@ -4,13 +4,13 @@ using TechJobs.Data;
 using TechJobs.ViewModels;
 using System.Linq;
 using System.Collections.Generic;
-//myish
+
 namespace TechJobs.Controllers
 {
     public class ListController : Controller
     {
 
-        // Our reference to the data store
+        
         private static JobData jobData;
 
         static ListController ()
@@ -18,7 +18,7 @@ namespace TechJobs.Controllers
             jobData = JobData.GetInstance();
         }
 
-        // Lists options for browsing, by "column"
+        
         public IActionResult Index()
         {
             JobFieldsViewModel jobFieldsViewModel = new JobFieldsViewModel();
@@ -27,7 +27,7 @@ namespace TechJobs.Controllers
             return View(jobFieldsViewModel);
         }
 
-        // Lists the values of a given column, or all jobs if selected
+        
         public IActionResult Values(JobFieldType column)
         {
             if (column.Equals(JobFieldType.All))
@@ -68,7 +68,7 @@ namespace TechJobs.Controllers
             }
         }
 
-        // Lists Jobs with a given field matching a given value
+        
         public IActionResult Jobs(JobFieldType column, string value)
         {
             SearchJobsViewModel jobsViewModel = new SearchJobsViewModel();

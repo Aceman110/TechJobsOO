@@ -2,13 +2,13 @@
 using TechJobs.Models;
 using TechJobs.Data;
 using TechJobs.ViewModels;
-//yall
+
 namespace TechJobs.Controllers
 {
     public class SearchController : Controller
     {
 
-        // Our reference to the data store
+        
         private static JobData jobData;
 
         static SearchController()
@@ -16,7 +16,7 @@ namespace TechJobs.Controllers
             jobData = JobData.GetInstance();
         }
 
-        // Display the search form
+        
         public IActionResult Index()
         {
             SearchJobsViewModel jobsViewModel = new SearchJobsViewModel();
@@ -24,7 +24,7 @@ namespace TechJobs.Controllers
             return View(jobsViewModel);
         }
 
-        // Process search submission and display search results
+        
         public IActionResult Results(SearchJobsViewModel jobsViewModel)
         {
 

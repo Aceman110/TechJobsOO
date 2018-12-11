@@ -9,9 +9,7 @@ namespace TechJobs.Data
     {
         private static bool IsDataLoaded = false;
 
-        /**
-         * Load and parse data from job_data.csv
-         */
+      
         internal static void LoadData(JobData jobData)
         {
 
@@ -38,11 +36,7 @@ namespace TechJobs.Data
             string[] headers = rows[0];
             rows.Remove(headers);
 
-            /**
-             * Parse each row array into a Job object.
-             * Assumes CSV column ordering: 
-             *      name,employer,location,position type,core competency
-             */
+          
             foreach (string[] row in rows)
             {
                 Employer employer = jobData.Employers.AddUnique(row[1]);
@@ -65,16 +59,14 @@ namespace TechJobs.Data
         }
 
 
-        /**
-         * Parse a single line of a CSV file into a string array
-         */
+       
         private static string[] CSVRowToStringArray(string row, char fieldSeparator = ',', char stringSeparator = '\"')
         {
             bool isBetweenQuotes = false;
             StringBuilder valueBuilder = new StringBuilder();
             List<string> rowValues = new List<string>();
 
-            // Loop through the row string one char at a time
+       
             foreach (char c in row.ToCharArray())
             {
                 if ((c == fieldSeparator && !isBetweenQuotes))
@@ -95,7 +87,7 @@ namespace TechJobs.Data
                 }
             }
 
-            // Add the final value
+            
             rowValues.Add(valueBuilder.ToString());
             valueBuilder.Clear();
 

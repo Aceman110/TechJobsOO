@@ -13,8 +13,7 @@ namespace TechJobs.ViewModels
         public string Name { get; set; }
 
 
-        // TODO #3 - Included other fields needed to create a job,
-        // with correct validation attributes and display names.
+    
 
         [Required]
         [Display(Name = "Employer")]
@@ -56,8 +55,7 @@ namespace TechJobs.ViewModels
                 });
             }
 
-            // TODO #4 - populate the other List<SelectListItem> 
-            // collections needed in the view
+         
 
             foreach (CoreCompetency field in jobData.CoreCompetencies.ToList())
             {
