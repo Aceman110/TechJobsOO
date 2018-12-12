@@ -12,8 +12,9 @@ namespace TechJobs.ViewModels
         [Required]
         public string Name { get; set; }
 
+        // TODO #3 - Include other fields needed to create a job,
+        // with correct validation attributes and display names.
 
-    
 
         [Required]
         [Display(Name = "Employer")]
